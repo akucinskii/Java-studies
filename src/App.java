@@ -1,7 +1,6 @@
 import trueFactory.ComputerPart;
 import trueFactory.Factory;
 import trueFactory.FactoryUseCase;
-import trueFactory.HardDisc;
 import trueFactory.HardDiscInstruction;
 import trueFactory.NetworkCardInstruction;
 import trueFactory.VideoCardInstruction;
