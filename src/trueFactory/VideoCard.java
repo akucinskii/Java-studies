@@ -4,16 +4,16 @@ public class VideoCard extends ComputerPart {
 
     @Override
     public void doSomething() {
-        System.out.println("VideoCard is doing something"); 
+        System.out.println("VideoCard is doing something");
     }
 
     @Override
     public String getDefaultInterface() {
-        return "PCI";
+        return "EEE";
     }
 
     @Override
     public String run(String name) {
-        return "VideoCard is running " + name;
+        return "Video Card is running " + name;
     }
 }

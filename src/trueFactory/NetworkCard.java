@@ -14,8 +14,6 @@ public class NetworkCard extends ComputerPart {
 
     @Override
     public String run(String name) {
-        return "NetworkCard is running " + name + " " + getDefaultInterface();
+        return "Network Card is running " + name + " " + getDefaultInterface();
     }
-    
-    
 }

@@ -12,16 +12,22 @@ public class Factory {
 
 
     public void addInstruction(InstructionComputerPart instruction) {
-        instructions.put(instruction.getComputerPartName(), instruction);
+
+
+            if (instructions.get(instruction.getComputerPartName()) != null) {
+                throw new RuntimeException("Instruction already exists");
+            }
+            instructions.put(instruction.getComputerPartName(), instruction);
+       
     }
 
     public ComputerPart getComputerPartByName(String name) {
         InstructionComputerPart instruction = instructions.get(name);
-        if (instruction == null) {
-            return null;
-        }
 
-        return instruction.getNewInstance();
+            if (instruction == null) {
+                throw new RuntimeException("Instruction not found");
+            }
+            return instruction.getNewInstance();
 
     }
 

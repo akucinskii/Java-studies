@@ -1,14 +1,14 @@
 package trueFactory;
 
-public class NetworkCardInstruction implements InstructionComputerPart {
+public class VideoCardInstruction implements InstructionComputerPart {
 
     @Override
     public String getComputerPartName() {
-        return "NetworkCard";
+        return "VideoCard";
     }
 
     @Override
     public ComputerPart getNewInstance() {
-       return new NetworkCard();
+       return new VideoCard();
     }
 }
