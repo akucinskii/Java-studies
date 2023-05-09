@@ -1,6 +1,8 @@
 package trueFactory;
 
-public abstract class Car {
+import java.io.Serializable;
+
+public abstract class Car implements Serializable {
     Boolean isRunning = false;
 
     public abstract String getDefaultInterface();
