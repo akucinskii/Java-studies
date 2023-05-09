@@ -1,4 +1,4 @@
-package trueFactory;
+package CarFactory;
 
 public class VideoCardInstruction implements InstructionComputerPart {
 
@@ -9,6 +9,6 @@ public class VideoCardInstruction implements InstructionComputerPart {
 
     @Override
     public ComputerPart getNewInstance() {
-       return new VideoCard();
+        return new VideoCard();
     }
 }

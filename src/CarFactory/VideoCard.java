@@ -1,4 +1,4 @@
-package trueFactory;
+package CarFactory;
 
 public class VideoCard extends ComputerPart {
 

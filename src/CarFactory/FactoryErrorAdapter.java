@@ -1,13 +1,16 @@
-package trueFactory;
+package CarFactory;
 
-public class FactoryUseCase {
+import CarFactory.Car.Car;
+import CarFactory.Car.InstructionCar;
+
+public class FactoryErrorAdapter {
     private Factory factory;
 
-    public FactoryUseCase(Factory factory) {
+    public FactoryErrorAdapter(Factory factory) {
         this.factory = factory;
     }
 
-    public void addInstruction(InstructionComputerPart instruction) {
+    public void addInstruction(InstructionCar instruction) {
         try {
             factory.addInstruction(instruction);
         } catch (Exception e) {
@@ -15,7 +18,7 @@ public class FactoryUseCase {
         }
     }
 
-    public ComputerPart getComputerPartByName(String name) {
+    public Car getComputerPartByName(String name) {
         try {
             return factory.getComputerPartByName(name);
         } catch (Exception e) {
