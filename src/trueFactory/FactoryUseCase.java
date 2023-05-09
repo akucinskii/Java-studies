@@ -7,7 +7,7 @@ public class FactoryUseCase {
         this.factory = factory;
     }
 
-    public void addInstruction(InstructionComputerPart instruction) {
+    public void addInstruction(InstructionCar instruction) {
         try {
             factory.addInstruction(instruction);
         } catch (Exception e) {
@@ -15,9 +15,9 @@ public class FactoryUseCase {
         }
     }
 
-    public ComputerPart getComputerPartByName(String name) {
+    public Car getCarByName(String name) {
         try {
-            return factory.getComputerPartByName(name);
+            return factory.getCarByName(name);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;

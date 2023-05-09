@@ -1,9 +1,9 @@
-import trueFactory.ComputerPart;
+import trueFactory.Car;
 import trueFactory.Factory;
 import trueFactory.FactoryUseCase;
-import trueFactory.HardDiscInstruction;
-import trueFactory.NetworkCardInstruction;
-import trueFactory.VideoCardInstruction;
+import trueFactory.FordInstruction;
+import trueFactory.OpelInstruction;
+import trueFactory.MazdaInstruction;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -12,22 +12,39 @@ public class App {
 
         FactoryUseCase factoryUseCase = new FactoryUseCase(factory);
 
-        factoryUseCase.addInstruction(new NetworkCardInstruction());
-        factoryUseCase.addInstruction(new HardDiscInstruction());
-        factoryUseCase.addInstruction(new VideoCardInstruction());
+        factoryUseCase.addInstruction(new OpelInstruction());
+        factoryUseCase.addInstruction(new FordInstruction());
+        factoryUseCase.addInstruction(new MazdaInstruction());
 
-        ComputerPart computerPart = factoryUseCase.getComputerPartByName("NetworkCard");
+        Car OpelCar = factoryUseCase.getCarByName("Opel");
 
-        ComputerPart hardDiscComputerPart = factoryUseCase.getComputerPartByName("HardDisc");
+        Car FordCar = factoryUseCase.getCarByName("Ford");
 
-        ComputerPart videoCardComputerPart = factoryUseCase.getComputerPartByName("VideoCard");
+        Car MazdaCar = factoryUseCase.getCarByName("Mazda");
 
         try {
-            System.out.println(computerPart.run("hello"));
-            System.out.println(hardDiscComputerPart.run("hello"));
-            System.out.println(videoCardComputerPart.run("hello"));
+            System.out.println(FordCar.run());
+            System.out.println(MazdaCar.run());
+            System.out.println(FordCar.stop());
+
+            if (FordCar instanceof trueFactory.Ford)
+                ((trueFactory.Ford) FordCar).startSelfDrivingMode();
+
+            if (MazdaCar instanceof trueFactory.Mazda)
+                ((trueFactory.Mazda) MazdaCar).honkAtPedestrians();
+
+            if (OpelCar instanceof trueFactory.Opel)
+                ((trueFactory.Opel) OpelCar).lockCarDoors();
+
+            System.out.println(OpelCar.run());
+
+            if (OpelCar instanceof trueFactory.Opel)
+                ((trueFactory.Opel) OpelCar).unlockCarDoors();
+
+            System.out.println(OpelCar.run());
+
         } catch (Exception e) {
-            System.out.println("No such computer part");
+            System.out.println("No such car instruction in factory");
         }
 
     }

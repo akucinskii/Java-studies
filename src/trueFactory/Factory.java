@@ -4,34 +4,29 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Factory {
-    private Map<String, InstructionComputerPart> instructions = new HashMap<>();
+    private Map<String, InstructionCar> instructions = new HashMap<>();
 
     public Factory() {
         instructions = new HashMap<>();
     }
 
+    public void addInstruction(InstructionCar instruction) {
 
-    public void addInstruction(InstructionComputerPart instruction) {
-
-
-            if (instructions.get(instruction.getComputerPartName()) != null) {
-                throw new RuntimeException("Instruction already exists");
-            }
-            instructions.put(instruction.getComputerPartName(), instruction);
-       
-    }
-
-    public ComputerPart getComputerPartByName(String name) {
-        InstructionComputerPart instruction = instructions.get(name);
-
-            if (instruction == null) {
-                throw new RuntimeException("Instruction not found");
-            }
-            return instruction.getNewInstance();
+        if (instructions.get(instruction.getCarName()) != null) {
+            throw new RuntimeException("Instruction already exists");
+        }
+        instructions.put(instruction.getCarName(), instruction);
 
     }
 
+    public Car getCarByName(String name) {
+        InstructionCar instruction = instructions.get(name);
 
+        if (instruction == null) {
+            throw new RuntimeException("Instruction not found");
+        }
+        return instruction.getNewInstance();
 
+    }
 
 }
