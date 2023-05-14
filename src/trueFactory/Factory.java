@@ -19,13 +19,13 @@ public class Factory {
 
     }
 
-    public Car getCarByName(String name) {
+    public Car getCarByName(String name, Object... o) {
         InstructionCar instruction = instructions.get(name);
 
         if (instruction == null) {
             throw new RuntimeException("Instruction not found");
         }
-        return instruction.getNewInstance();
+        return instruction.getNewInstance(o);
 
     }
 

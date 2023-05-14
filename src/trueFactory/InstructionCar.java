@@ -4,5 +4,5 @@ public interface InstructionCar {
 
     public String getCarName();
 
-    public Car getNewInstance();
+    public Car getNewInstance(Object... o);
 }

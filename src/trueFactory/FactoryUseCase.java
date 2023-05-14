@@ -15,9 +15,9 @@ public class FactoryUseCase {
         }
     }
 
-    public Car getCarByName(String name) {
+    public Car getCarByName(String name, Object... o) {
         try {
-            return factory.getCarByName(name);
+            return factory.getCarByName(name, o);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;

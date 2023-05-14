@@ -4,6 +4,10 @@ public class Opel extends Car {
 
     Boolean isLocked = false;
 
+    public Opel(String color, int yearOfProduction) {
+        super(color, yearOfProduction);
+    }
+
     public String getDefaultInterface() {
         return "Opel";
     }
