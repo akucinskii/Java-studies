@@ -58,8 +58,7 @@ public class App {
         System.out.println("Gas station normal queue refuelling");
         System.out.println("");
 
-        int queueSize = gasStation.getQueueSize();
-        for (int i = 0; i < queueSize; i++) {
+        while (gasStation.getQueueSize() > 0) {
             Car car = gasStation.getCarFromQueue();
             System.out.println(car.getClass().getSimpleName() + " " +
                     car.getYearOfProduction() + " "
@@ -74,8 +73,7 @@ public class App {
             gasStation.addCarToPriorityQueue(car);
         }
 
-        int queuePrioritySize = gasStation.getPriorityQueueSize();
-        for (int i = 0; i < queuePrioritySize; i++) {
+        while (gasStation.getPriorityQueueSize() > 0) {
             Car car = gasStation.getCarFromPriorityQueue();
             System.out.println(car.getClass().getSimpleName() + " " +
                     car.getYearOfProduction() + " "
