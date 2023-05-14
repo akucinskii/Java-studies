@@ -1,6 +1,7 @@
 package GasStation;
 
-import java.util.LinkedList;
+import java.util.ArrayDeque;
+
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -13,7 +14,7 @@ public class GasStation {
 
     public GasStation() {
         this.priorityQueue = new PriorityQueue<Car>();
-        this.queue = new LinkedList<Car>();
+        this.queue = new ArrayDeque<Car>();
 
     }
 
