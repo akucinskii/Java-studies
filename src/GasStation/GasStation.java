@@ -18,7 +18,6 @@ public class GasStation {
     }
 
     public void addCarToQueue(Car car) {
-
         this.queue.add(car);
     }
 
