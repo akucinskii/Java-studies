@@ -8,6 +8,7 @@ public class Tree {
     }
 
     public void add(String value) {
+        checkIfElementDoesNotExist(value);
 
         Node node = new Node(value);
         if (root == null) {
@@ -36,6 +37,8 @@ public class Tree {
     }
 
     public void display() {
+        checkIfEmpty();
+
         display(this.root);
         System.out.println();
     }
@@ -49,11 +52,19 @@ public class Tree {
     }
 
     public void displayAsc() {
+        checkIfEmpty();
+
+        if (getNodesCount() == 0) {
+            throw new IllegalArgumentException("Tree is empty");
+        }
+
         displayAsc(this.root);
         System.out.println();
     }
 
     private void displayAsc(Node root) {
+        checkIfEmpty();
+
         if (root != null) {
             displayAsc(root.left);
             System.out.print(root.value + " ");
@@ -62,8 +73,8 @@ public class Tree {
     }
 
     public void displayDsc() {
+        checkIfEmpty();
         displayDsc(this.root);
-        System.out.println();
     }
 
     private void displayDsc(Node root) {
@@ -112,6 +123,7 @@ public class Tree {
     }
 
     public void delete(String value) {
+        checkIfElementExists(value);
         deleteRecursive(this.root, value);
     }
 
@@ -153,7 +165,7 @@ public class Tree {
         return root.left == null ? root.value : findSmallestValue(root.left);
     }
 
-    public boolean findValue(String value) {
+    public Boolean findValue(String value) {
         return findValueRecursive(root, value);
     }
 
@@ -169,5 +181,27 @@ public class Tree {
         return value.length() < current.value.length()
                 ? findValueRecursive(current.left, value)
                 : findValueRecursive(current.right, value);
+    }
+
+    public void clear() {
+        this.root = null;
+    }
+
+    public void checkIfEmpty() {
+        if (getNodesCount() == 0) {
+            throw new IllegalArgumentException("Tree is empty");
+        }
+    }
+
+    public void checkIfElementExists(String value) {
+        if (!findValue(value)) {
+            throw new IllegalArgumentException("Value does not exist in tree");
+        }
+    }
+
+    public void checkIfElementDoesNotExist(String value) {
+        if (findValue(value)) {
+            throw new IllegalArgumentException("Value already exists in tree");
+        }
     }
 }
