@@ -1,4 +1,4 @@
-Link do repo: https://github.com/akucinskii/Java-studies/tree/queues-and-sorting
+Link do repo: https://github.com/akucinskii/Java-studies/tree/binary-tree
 
-Cala logika znajduje się w pliku main.java w glownej paczce
-Implementacja klasy zajmujacej sie kolejkami znajduje się w paczce GasStation.
+Paczka z kodem:
+Tree
